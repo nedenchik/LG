@@ -23,7 +23,7 @@
       "app_id": "lampa.tv"
     }
   },
-  "google": {
+  "lg_channels": {
     "function": "launch_app",
     "inputs": {
       "app_id": "webos.screen.off"
@@ -36,3 +36,4 @@
 	}
   }
 }
+

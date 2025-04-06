@@ -8,7 +8,7 @@ import fcntl
 BLOCK_MOUSE = False  # Set to True to disable the mouse, note EXCLUSIVE_MODE must be True to work
 EXCLUSIVE_MODE = True  # Prevent bound codes from being seen by WebOS, must be True for BLOCK_MOUSE
 
-INPUT_DEVICE = "/dev/input/event2"  # Input device for the magic remote in bluetooth mode
+INPUT_DEVICE = "/dev/input/event3"  # Input device for the magic remote in bluetooth mode
 # INPUT_DEVICE = "/dev/input/event1"  # use this for IR remotes
 
 OUTPUT_DEVICE = "/dev/input/event4"  # unbound codes get resent to this device in exclusive mode
@@ -44,7 +44,8 @@ BUTTONS = {
     1042: "disney",
     1043: "lg_channels",
     1086: "alexa",
-    1117: "google",
+    1114: "1114",   # Алиса
+    1044: "1044",   # Rakuten TV
     362: "guide",
     428: "voice",
     771: "channels",
@@ -58,8 +59,7 @@ BUTTONS = {
     1116: "tv",
     358: "info",
     773: "home",
-    1114: "1114",   # Алиса
-    1044: "1044",   # Rakuten TV
+    28: "ok"
 }
 
 EVIOCGRAB = 1074021776  # Don't mess with this
@@ -231,6 +231,8 @@ def press_button(inputs):
     """
     button = inputs["button"]
     keycode = get_keycode(button)
+    if not keycode:
+        return
     print("Simulating keystroke with button '%s' (keycode %s)" % (button, keycode))
     send_keystroke(OUTPUT_DEVICE, keycode)
 
@@ -361,7 +363,11 @@ def show_message(message):
 def get_keycode(button):
     """Returns the keycode associated with the button name"""
     keys = [k for k, v in BUTTONS.items() if v == button]
-    return keys[0]
+    if keys:
+        return keys[0]
+
+    print('ERROR: Button "%s" not found!' % button)
+    return None
 
 
 def send_keystroke(device, keycode):
@@ -453,7 +459,7 @@ def input_loop(button_map):
         if value == 0:
             if code not in buttons_waiting:
                 print("WARNING: Got code %s UP with no DOWN" % code)
-            elif now - buttons_waiting[code] > 60.0:   # VAN было elif now - buttons_waiting[code] > 1.0:
+            elif now - buttons_waiting[code] > 1.0:
                 print("Ignoring long press of %s" % BUTTONS[code])
             else:
                 print("%s button up" % BUTTONS[code])
