@@ -20,11 +20,13 @@
   "1044": {
     "function": "launch_app",
     "inputs": {
-      "app_id": "lampa.tv"
+      "app_id": "com.webos.app.browser"
     }
   },
-  "lg_channels": {
-    "function": "screen_off"
+  "google": {
+    "function": "launch_app",
+    "inputs": {
+      "app_id": "webos.screen.off"
     }
   },
   "alexa": {
@@ -34,4 +36,3 @@
 	}
   }
 }
-
