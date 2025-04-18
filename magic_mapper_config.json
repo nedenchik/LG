@@ -24,9 +24,7 @@
     }
   },
   "lg_channels": {
-    "function": "launch_app",
-    "inputs": {
-      "app_id": "webos.screen.off"
+    "function": "screen_off"
     }
   },
   "alexa": {
