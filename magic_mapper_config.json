@@ -2,37 +2,7 @@
   "netflix": {
   "function": "press_button",
   "inputs": {
-    "button": "pause"
-	}
-  },
-  "prime": {
-  "function": "press_button",
-  "inputs": {
-    "button": "play"
-	}
-  },
-  "disney": {
-    "function": "launch_app",
-    "inputs": {
-      "app_id": "com.685631.3411"
-    }
-  },
-  "1044": {
-    "function": "launch_app",
-    "inputs": {
-      "app_id": "com.webos.app.browser"
-    }
-  },
-  "google": {
-    "function": "launch_app",
-    "inputs": {
-      "app_id": "webos.screen.off"
-    }
-  },
-  "alexa": {
-  "function": "press_button",
-  "inputs": {
-    "button": "1114"
+    "button": "1044"
 	}
   }
 }
