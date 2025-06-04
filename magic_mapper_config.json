@@ -4,5 +4,24 @@
   "inputs": {
     "button": "1044"
 	}
+  },
+  "1039": {
+  "function": "press_button",
+  "inputs": {
+    "button": "play"
+	}
+  },
+  "1047": {
+    "function": "launch_app",
+    "inputs": {
+      "app_id": "Movies - RakutenTV button"
+    }
+  },
+  "lg_channels": {
+    "function": "launch_app",
+    "inputs": {
+      "app_id": "webos.screen.off"
+    }
   }
 }
+
