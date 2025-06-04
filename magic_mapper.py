@@ -59,7 +59,10 @@ BUTTONS = {
     1116: "tv",
     358: "info",
     773: "home",
-    28: "ok"
+    28: "ok",    
+    1039: "1039" #IVI,
+    1047: "1047" #Okko,
+    1120: "1120" #Shop
 }
 
 EVIOCGRAB = 1074021776  # Don't mess with this
