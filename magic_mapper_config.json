@@ -2,25 +2,37 @@
   "netflix": {
   "function": "press_button",
   "inputs": {
-    "button": "1044"
+    "button": "pause"
 	}
   },
-  "1039": {
+  "prime": {
   "function": "press_button",
   "inputs": {
     "button": "play"
 	}
   },
-  "1047": {
+  "disney": {
     "function": "launch_app",
     "inputs": {
-      "app_id": "Movies - RakutenTV button"
+      "app_id": "com.685631.3411"
     }
   },
-  "lg_channels": {
+  "1044": {
+    "function": "launch_app",
+    "inputs": {
+      "app_id": "com.webos.app.browser"
+    }
+  },
+  "google": {
     "function": "launch_app",
     "inputs": {
       "app_id": "webos.screen.off"
     }
+  },
+  "alexa": {
+  "function": "press_button",
+  "inputs": {
+    "button": "1114"
+	}
   }
 }
